@@ -3,82 +3,550 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuku Creatives | D2C Creative Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Yuku Creatives | Performance Creatives & Shopify Growth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root { --primary: #4F46E5; --secondary: #0D9488; --bg: #F8FAFC; --card: #FFFFFF; --text: #0F172A; --muted: #64748B; --border: #E2E8F0; --wa: #25D366; }
+    :root {
+      --primary: #4F46E5;
+      --primary-dark: #3730A3;
+      --secondary: #0D9488;
+      --accent: #F59E0B;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --wa: #25D366;
+      --shadow-sm: 0 2px 4px rgba(15,23,42,0.04);
+      --shadow-md: 0 10px 25px -4px rgba(79,70,229,0.08), 0 6px 12px -2px rgba(15,23,42,0.03);
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F8FAFC; color: var(--text); padding: 24px 16px 40px; display: flex; justify-content: center; }
-    .wrap { width: 100%; max-width: 780px; }
-    .hero { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px 20px; text-align: center; box-shadow: 0 10px 25px rgba(79,70,229,0.08); margin-bottom: 24px; position: relative; }
-    .hero::before { content: ""; position: absolute; top:0; left:0; right:0; height:4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 20px 20px 0 0; }
-    .badge { display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; font-size: 0.8rem; font-weight: 700; padding: 5px 14px; border-radius: 50px; margin-bottom: 14px; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: #10B981; }
-    h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
-    h1 span { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .tag { font-size: 0.96rem; color: var(--muted); max-width: 520px; margin: 0 auto 22px; }
-    .actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
-    @media(min-width: 480px){ .actions { grid-template-columns: 1fr 1fr; } }
-    .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.92rem; }
-    .btn-wa { background: var(--wa); color: #fff; }
-    .btn-ig { background: #fff; border: 1.5px solid var(--border); color: #0F172A; }
-    .sec-h { font-size: 1.15rem; font-weight: 800; margin: 26px 0 14px; display: flex; align-items: center; gap: 10px; }
-    .sec-h::after { content:""; flex:1; height:1px; background: var(--border); }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media(min-width: 540px){ .grid { grid-template-columns: 1fr 1fr; } }
-    .card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
-    .card h3 { font-size: 1rem; margin-bottom: 4px; font-weight: 700; }
-    .card p { font-size: 0.84rem; color: var(--muted); }
-    .tag-p { font-size: 0.7rem; font-weight: 700; color: var(--secondary); background: #F0FDFA; padding: 3px 8px; border-radius: 6px; display: inline-block; margin-bottom: 6px; }
-    details { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer; }
-    summary { font-weight: 700; font-size: 0.92rem; list-style: none; }
-    details p { font-size: 0.84rem; color: var(--muted); margin-top: 8px; }
-    .final { background: linear-gradient(135deg, var(--primary), #312E81); color: #fff; border-radius: 20px; padding: 28px 18px; text-align: center; margin-top: 24px; }
-    .final h3 { font-size: 1.3rem; margin-bottom: 6px; }
-    .final p { font-size: 0.85rem; color: #C7D2FE; margin-bottom: 18px; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #EEF2FF 0%, #F8FAFC 50%);
+      color: var(--text-main);
+      padding: 24px 16px 50px;
+      display: flex;
+      justify-content: center;
+      line-height: 1.6;
+    }
+
+    .container { width: 100%; max-width: 820px; }
+
+    .hero {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 22px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .badge-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+    }
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 22px;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media(min-width: 500px) { .hero-actions { grid-template-columns: 1fr 1fr; } }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-wa {
+      background: var(--wa);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
+    .btn-ig {
+      background: #FFFFFF;
+      color: var(--text-main);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ig:hover { border-color: #E1306C; color: #E1306C; transform: translateY(-2px); }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .metric-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .metric-box h4 { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+    .metric-box p { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 2px; }
+
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 32px 0 16px;
+    }
+    .sec-header h2 { font-size: 1.25rem; font-weight: 800; white-space: nowrap; }
+    .sec-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media(min-width: 580px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+    .service-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .service-icon {
+      font-size: 1.5rem;
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: #EEF2FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; }
+    .service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; }
+    .service-list {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .service-list span { font-size: 0.78rem; font-weight: 600; color: #4338CA; }
+        .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media(min-width: 600px) { .timeline-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; } }
+    .timeline-step { display: flex; flex-direction: column; }
+    .step-badge {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: #EEF2FF; color: var(--primary);
+      font-weight: 800; font-size: 0.82rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 8px;
+      border: 1px solid #C7D2FE;
+    }
+    .timeline-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+    .timeline-step p { font-size: 0.78rem; color: var(--text-muted); }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media(min-width: 620px) { .packages-grid { grid-template-columns: repeat(3, 1fr); } }
+    .package-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .package-card.popular {
+      border: 2px solid var(--primary);
+      background: #FAFAFF;
+    }
+    .tag-featured {
+      position: absolute;
+      top: -12px;
+      right: 14px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+    .package-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+    .package-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px; }
+    .package-features { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .package-features li { font-size: 0.8rem; color: var(--text-main); display: flex; align-items: center; gap: 6px; }
+    .package-features li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
+    .btn-pack {
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: #EEF2FF;
+      color: var(--primary);
+      border: 1px solid #C7D2FE;
+      transition: all 0.2s;
+    }
+    .btn-pack:hover { background: var(--primary); color: #fff; }
+
+    .tools-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 16px;
+    }
+    .tool-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #F1F5F9;
+      color: #334155;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      cursor: pointer;
+    }
+    details[open] { border-color: var(--primary); background: #FAFAFF; }
+    summary { font-size: 0.95rem; font-weight: 700; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.2rem; color: var(--primary); }
+    details[open] summary::after { content: "−"; }
+    details p { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; line-height: 1.45; }
+
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      border-radius: 22px;
+      padding: 32px 20px;
+      text-align: center;
+      margin-top: 30px;
+      box-shadow: 0 15px 30px rgba(79,70,229,0.25);
+    }
+    .cta-banner h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+    .cta-banner p { font-size: 0.9rem; color: #C7D2FE; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; flex-direction: column; gap: 10px; max-width: 440px; margin: 0 auto; }
+    @media(min-width: 480px) { .cta-buttons { flex-direction: row; justify-content: center; } }
+    .btn-light { background: #FFFFFF; color: var(--primary); font-weight: 800; }
+    .btn-light:hover { background: #F8FAFC; transform: translateY(-2px); }
+    .btn-glass { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+    .btn-glass:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+    footer { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 24px; }
+    footer a { color: var(--primary); text-decoration: none; font-weight: 700; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero">
-      <div class="badge"><span class="dot"></span> Open For Projects</div>
+
+  <div class="container">
+
+    <header class="hero">
+      <div class="badge-status">
+        <span class="badge-dot"></span> Accepting 2 D2C Brand Projects
+      </div>
       <h1>Yuku <span>Creatives</span></h1>
-      <p class="tag">Scalable Product Creatives, 3D Mockups, High-Conversion Landing Pages & Shopify Architecture.</p>
-      <div class="actions">
-        <a href="https://wa.me/918953498675?text=Hi%20Yuku%20Creatives!%20Want%20to%20discuss%20a%20project." class="btn btn-wa" target="_blank">💬 WhatsApp (8953498675)</a>
-        <a href="https://ig.me/m/yuku.creative" class="btn btn-ig" target="_blank">📸 DM on Instagram</a>
+      <p class="tagline">
+        End-to-end creative growth partner for modern e-commerce. From high-hook product reels & 3D mockups to high-converting landing pages and Shopify store support[span_1](start_span)[span_1](end_span).
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/918953498675?text=Hi%20Yuku%20Creatives!%20I%20want%20to%20discuss%20a%20project%20for%20my%20brand." class="btn btn-wa" target="_blank">
+          💬 Chat on WhatsApp (8953498675)
+        </a>
+        <a href="https://ig.me/m/yuku.creative" class="btn btn-ig" target="_blank">
+          📸 DM on Instagram (@yuku.creative)
+        </a>
+      </div>
+    </header>
+
+    <div class="metric-grid">
+      <div class="metric-box">
+        <h4>48-72h</h4>
+        <p>Delivery Speed</p>
+      </div>
+      <div class="metric-box">
+        <h4>3.5x+</h4>
+        <p>ROAS Driven</p>
+      </div>
+      <div class="metric-box">
+        <h4>100%</h4>
+        <p>Custom Built</p>
       </div>
     </div>
-        <div class="sec-h">Core Capabilities</div>
-    <div class="grid">
-      <div class="card"><h3>🎬 Product Reels</h3><p>Viral hooks, fast-paced motion edits & 3D mockups engineered to lower Cost Per Click (CPC).</p></div>
-      <div class="card"><h3>🎨 Ad Creatives</h3><p>Editorial layouts, premium packaging 3D renders, and eye-catching banners.</p></div>
-      <div class="card"><h3>🚀 Landing Pages</h3><p>Conversion-focused mobile layouts engineered to turn cold ad clicks into paying customers.</p></div>
-      <div class="card"><h3>🛍️ Shopify Setup</h3><p>Complete store setup, UI redesign, navigation cleanup, and checkout speed tuning.</p></div>
+
+    <div class="sec-header">
+      <h2>Complete Creative Solutions</h2>
+      <div class="sec-line"></div>
     </div>
 
-    <div class="sec-h">Portfolio Niches</div>
-    <div class="grid">
-      <div class="card"><span class="tag-p">Luxury & Watches</span><h3>Timepieces</h3><p>Macro dials and lighting effects that justify premium pricing.</p></div>
-      <div class="card"><span class="tag-p">Fragrance & Beauty</span><h3>Perfumes</h3><p>Sensory visuals and aesthetic typography for impulse buys.</p></div>
-      <div class="card"><span class="tag-p">Smart Home</span><h3>Ambient Lights</h3><p>Relatable night setups and viral problem-solving hooks.</p></div>
-      <div class="card"><span class="tag-p">Fitness</span><h3>Blenders & Shakers</h3><p>Fast-cut utility videos showing instant blending in routine.</p></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3>Product Reels & Creative Content</h3>
+        <p>Short-form video engineered for high click-through rates. We write winning hooks, rhythm-synced transitions, and viral format scripts[span_2](start_span)[span_2](end_span).</p>
+        <div class="service-list">
+          <span>✦ 3-Second Hook Architecture</span>
+          <span>✦ Lifestyle & UGC Motion Cuts</span>
+          <span>✦ Instagram, TikTok & Meta Ad Formats</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Product Creatives & 3D Renders</h3>
+        <p>Editorial-grade visuals that make your products feel like luxury heritage items. Highlight every curve, texture, and finish without costly studio shoots[span_3](start_span)[span_3](end_span).</p>
+        <div class="service-list">
+          <span>✦ 3D CGI Product Modeling</span>
+          <span>✦ Macro Packaging & Texture Shots</span>
+          <span>✦ High-CTR Social Media Ad Banners</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h3>Conversion Landing Pages</h3>
+        <p>Tailored landing page architecture specifically designed to lower Customer Acquisition Cost (CAC) and drive immediate single-session purchases[span_4](start_span)[span_4](end_span).</p>
+        <div class="service-list">
+          <span>✦ Mobile-First CRO Wireframes</span>
+          <span>✦ Social Proof & Sticky Add-To-Cart Funnels</span>
+          <span>✦ Ultra-Fast Page Loading Speeds</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛍️</div>
+        <h3>Shopify Store Setup & Support</h3>
+        <p>Complete e-commerce backend and frontend handling so you can focus entirely on marketing and inventory[span_5](start_span)[span_5](end_span).</p>
+        <div class="service-list">
+          <span>✦ Clean Theme Architecture & Redesign</span>
+          <span>✦ App Stack Tuning & Upsell Boosters</span>
+          <span>✦ On-Demand Maintenance & Technical Fixes</span>
+        </div>
+      </div>
+    </div>
+        <div class="sec-header">
+      <h2>Our 4-Step Sprint</h2>
+      <div class="sec-line"></div>
     </div>
 
-    <div class="sec-h">Frequently Asked Questions</div>
-    <details><summary>What is the turnaround time?</summary><p>Product reels take 48-72 hours. Landing pages and Shopify setup take 4-6 business days.</p></details>
-    <details><summary>Do I need to send physical products?</summary><p>Not required if you have 3D files or high-res photos; we create digital mockups.</p></details>
-    <details><summary>How do revisions work?</summary><p>We provide quick revisions on timing, colors, text, and music until you are satisfied.</p></details>
+    <div class="timeline-card">
+      <div class="timeline-grid">
+        <div class="timeline-step">
+          <div class="step-badge">01</div>
+          <h4>Angle Audit</h4>
+          <p>We analyze your product and find the most profitable creative angles.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-badge">02</div>
+          <h4>Script & Frame</h4>
+          <p>Crafting storyboard hooks, visual mockups, and copy wireframes.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-badge">03</div>
+          <h4>Production</h4>
+          <p>High-end 3D rendering, color grading, sound design & CRO coding.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-badge">04</div>
+          <h4>Handover</h4>
+          <p>Ready-to-launch ad assets and seamless live Shopify deployment.</p>
+        </div>
+      </div>
+    </div>
 
-    <div class="final">
+    <div class="sec-header">
+      <h2>Engagement Models</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="packages-grid">
+      <div class="package-card">
+        <div>
+          <h3>Creative Sprint</h3>
+          <p class="package-desc">Ideal for brand launches and ad testing.</p>
+          <ul class="package-features">
+            <li>Batch of Product Reels</li>
+            <li>3D Static Ad Creatives</li>
+            <li>Ad Hooks & Scripting</li>
+            <li>48-Hour Turnaround</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/918953498675?text=Hi%20Yuku!%20Interested%20in%20Creative%20Sprint." class="btn-pack" target="_blank">Enquire Sprint</a>
+      </div>
+
+      <div class="package-card popular">
+        <span class="tag-featured">Most Popular</span>
+        <div>
+          <h3>Landing Page CRO</h3>
+          <p class="package-desc">Turn traffic into profitable direct purchases.</p>
+          <ul class="package-features">
+            <li>Bespoke Custom Landing Page</li>
+            <li>High-Conversion Copywriting</li>
+            <li>Speed Optimization & Mobile UI</li>
+            <li>Shopify Theme Integration</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/918953498675?text=Hi%20Yuku!%20Interested%20in%20Landing%20Page%20CRO." class="btn-pack" style="background:var(--primary); color:#fff;" target="_blank">Enquire Landing Page</a>
+      </div>
+
+      <div class="package-card">
+        <div>
+          <h3>Full Shopify Growth</h3>
+          <p class="package-desc">Complete store design and continuous support[span_6](start_span)[span_6](end_span).</p>
+          <ul class="package-features">
+            <li>Complete Store Setup / Redesign</li>
+            <li>Ongoing Creative Deliverables</li>
+            <li>Technical Maintenance & Fixes</li>
+            <li>Direct WhatsApp Support Line</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/918953498675?text=Hi%20Yuku!%20Interested%20in%20Shopify%20Growth%20Retainer." class="btn-pack" target="_blank">Enquire Retainer</a>
+      </div>
+    </div>
+
+    <div class="sec-header">
+      <h2>Production Stack</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="tools-wrap">
+      <span class="tool-pill">🛍️ Shopify Plus</span>
+      <span class="tool-pill">🧊 Blender 3D</span>
+      <span class="tool-pill">✨ Adobe After Effects</span>
+      <span class="tool-pill">🎨 Figma Design</span>
+      <span class="tool-pill">🎬 Premiere Pro</span>
+      <span class="tool-pill">📈 Meta Ads Library</span>
+    </div>
+
+    <div class="sec-header">
+      <h2>Frequently Asked Questions</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>Do I have to ship physical products to you?</summary>
+        <p>No, shipping is not always required. If you have manufacturer photos, high-res reference angles, or 3D CAD files, we can render hyper-realistic 3D mockups completely digitally.</p>
+      </details>
+      <details>
+        <summary>What is your turnaround time for reels and pages?</summary>
+        <p>Product video reels are delivered in 48 to 72 hours. Complete landing pages and full Shopify store setups take between 3 to 6 business days.</p>
+      </details>
+      <details>
+        <summary>How many revisions do we get?</summary>
+        <p>We work collaboratively. We provide rapid iterative revisions on timing, colors, audio, and visual pacing until your brand vision is fully matched.</p>
+      </details>
+      <details>
+        <summary>How do we start?</summary>
+        <p>Click the WhatsApp or Instagram button below, drop your product link or website, and we will send a tailored proposal within a few hours[span_7](start_span)[span_7](end_span)!</p>
+      </details>
+    </div>
+
+    <div class="cta-banner">
       <h3>Ready to Scale Your D2C Brand?</h3>
-      <p>Send your product link or reference ideas for a quick creative audit.</p>
-      <div class="actions">
-        <a href="https://wa.me/918953498675?text=Hi%20Yuku%20Creatives,%20let's%20work%20together." class="btn" style="background:#fff; color:#4F46E5;" target="_blank">💬 WhatsApp: 8953498675</a>
-        <a href="https://ig.me/m/yuku.creative" class="btn" style="background:rgba(255,255,255,0.15); color:#fff;" target="_blank">📩 Instagram DM</a>
+      <p>Reach out directly with your store link and get a free creative audit of your current ad funnels.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/918953498675?text=Hi%20Yuku%20Creatives,%20let's%20discuss%20my%20brand." class="btn btn-light" target="_blank">
+          💬 WhatsApp (8953498675)
+        </a>
+        <a href="https://ig.me/m/yuku.creative" class="btn btn-glass" target="_blank">
+          📩 DM @yuku.creative
+        </a>
       </div>
     </div>
-    <p style="text-align:center; font-size:0.8rem; color:#94A3B8; margin-top:20px;">© 2026 Yuku Creatives • @yuku.creative</p>
+
+    <footer>
+      <p>© 2026 Yuku Creatives • Built for High ROAS Brands • <a href="https://instagram.com/yuku.creative" target="_blank">@yuku.creative</a>[span_8](start_span)[span_8](end_span)</p>
+    </footer>
+
   </div>
+
 </body>
 </html>
