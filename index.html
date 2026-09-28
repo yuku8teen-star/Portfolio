@@ -56,16 +56,9 @@
       margin: 0 auto;
     }
 
-    /* Keyframes Animations */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(22px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes pulseDot {
@@ -74,17 +67,10 @@
       100% { transform: scale(0.9); opacity: 0.8; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
-    }
-
-    /* Animated Entry Classes */
     .animate-entry {
       animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    /* Header Profile Card */
     .hero-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -101,9 +87,7 @@
     .hero-card::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 5px;
       background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, #EC4899 100%);
     }
@@ -154,7 +138,6 @@
       line-height: 1.55;
     }
 
-    /* Primary Quick Action Buttons */
     .hero-actions {
       display: grid;
       grid-template-columns: 1fr;
@@ -162,9 +145,7 @@
     }
 
     @media (min-width: 520px) {
-      .hero-actions {
-        grid-template-columns: 1fr 1fr;
-      }
+      .hero-actions { grid-template-columns: 1fr 1fr; }
     }
 
     .btn {
@@ -208,7 +189,6 @@
       box-shadow: 0 8px 22px rgba(225, 48, 108, 0.18);
     }
 
-    /* Metric Counters */
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -246,7 +226,6 @@
       letter-spacing: 0.6px;
     }
 
-    /* Section Headings */
     .section-header {
       display: flex;
       align-items: center;
@@ -268,7 +247,6 @@
       background: linear-gradient(90deg, var(--border-color) 0%, transparent 100%);
     }
 
-    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -277,9 +255,7 @@
     }
 
     @media (min-width: 580px) {
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .services-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .service-card {
@@ -329,7 +305,6 @@
       line-height: 1.5;
     }
 
-    /* Workflow Timeline Steps */
     .workflow-container {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -355,7 +330,6 @@
     .workflow-step {
       display: flex;
       flex-direction: column;
-      position: relative;
     }
 
     .step-number {
@@ -386,7 +360,6 @@
       line-height: 1.4;
     }
 
-    /* Portfolio Highlights */
     .portfolio-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -395,9 +368,7 @@
     }
 
     @media (min-width: 580px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .portfolio-card {
@@ -451,70 +422,8 @@
       font-size: 0.75rem;
       font-weight: 600;
       color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
 
-    /* Interactive FAQ Accordion */
-    .faq-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    details {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 16px 20px;
-      transition: all 0.25s ease;
-      cursor: pointer;
-    }
-
-    details[open] {
-      border-color: var(--primary);
-      box-shadow: var(--shadow-sm);
-      background: #FAFAFF;
-    }
-
-    summary {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-main);
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: '+';
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--primary);
-      transition: transform 0.25s ease;
-    }
-
-    details[open] summary::after {
-      content: '−';
-      transform: rotate(180deg);
-    }
-
-    details p {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
-    /* Agency Perks */
     .perks-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -559,7 +468,59 @@
       flex-shrink: 0;
     }
 
-    /* Bottom Final CTA */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px 20px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    details[open] {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+      background: #FAFAFF;
+    }
+
+    summary {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
     .final-cta {
       background: linear-gradient(135deg, var(--primary) 0%, #312E81 100%);
       color: #FFFFFF;
@@ -568,8 +529,6 @@
       text-align: center;
       box-shadow: 0 18px 36px rgba(79, 70, 229, 0.28);
       margin-bottom: 28px;
-      position: relative;
-      overflow: hidden;
     }
 
     .final-cta h3 {
@@ -612,7 +571,6 @@
     .btn-light:hover {
       background: #F8FAFC;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(255,255,255,0.3);
     }
 
     .btn-outline-light {
@@ -627,7 +585,6 @@
       transform: translateY(-2px);
     }
 
-    /* Clean Footer */
     footer {
       text-align: center;
       font-size: 0.82rem;
@@ -646,10 +603,9 @@
 
   <div class="app-container animate-entry">
 
-    <!-- Top Identity / Hero Section -->
     <header class="hero-card">
       <div class="badge-status">
-        <span class="badge-dot"></span> Available for Q4/2026 Brand Launches
+        <span class="badge-dot"></span> Available for Brand Projects
       </div>
 
       <h1 class="brand-title">Yuku <span>Creatives</span></h1>
@@ -658,15 +614,12 @@
         We architect high-converting landing pages, scroll-stopping product reels, and scalable Shopify stores tailored for modern D2C founders.
       </p>
 
-      <!-- Main Direct Contacts: Only WhatsApp and Instagram DM -->
       <div class="hero-actions">
-        <!-- Direct WhatsApp -->
         <a href="https://wa.me/918953498675?text=Hi%20Yuku%20Creatives!%20I%20checked%20your%20landing%20page%20and%20want%20to%20discuss%20a%20project." class="btn btn-wa" target="_blank">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.761.458 3.417 1.258 4.865l-1.336 4.887 5.011-1.314c1.402.766 3.003 1.204 4.707 1.204 5.514 0 10-4.486 10-10s-4.486-10-10-10z"/></svg>
           Chat on WhatsApp (8953498675)
         </a>
 
-        <!-- Direct Instagram DM -->
         <a href="https://ig.me/m/yuku.creative" class="btn btn-ig" target="_blank">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           DM on Instagram (@yuku.creative)
@@ -674,7 +627,6 @@
       </div>
     </header>
 
-    <!-- Key Performance Metrics -->
     <div class="metric-grid">
       <div class="metric-box">
         <h4>48h</h4>
@@ -690,7 +642,6 @@
       </div>
     </div>
 
-    <!-- Core Agency Services -->
     <div class="section-header">
       <h2>Core Capabilities</h2>
       <div class="section-line"></div>
@@ -722,7 +673,6 @@
       </div>
     </div>
 
-    <!-- Agency Workflow / How We Work Section -->
     <div class="section-header">
       <h2>How We Work With You</h2>
       <div class="section-line"></div>
@@ -735,4 +685,36 @@
           <h4>Discovery & Angle</h4>
           <p>Briefing session to identify your hero USP and winning ad hooks.</p>
         </div>
-        <div class="workflow-st
+        <div class="workflow-step">
+          <div class="step-number">02</div>
+          <h4>Script & Creative</h4>
+          <p>Drafting motion concepts, storyboards, and responsive page wireframes.</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">03</div>
+          <h4>Production</h4>
+          <p>Polished 3D rendering, color grading, sound design & CRO coding.</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">04</div>
+          <h4>Launch & Scale</h4>
+          <p>Final delivery formatted for immediate ad deployment and Shopify live sync.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>Portfolio Niches</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div>
+          <span class="portfolio-tag">Luxury & Timepieces</span>
+          <h4>Chronograph & Watchmaking</h4>
+          <p>Macro dials, reflective glass lighting, and high-end lifestyle storytelling that make premium prices unquestionable.</p>
+        </div>
+        <div class="portfolio-meta">✦ Featured: 3D Render & Video Reel</div>
+      </div>
+      
